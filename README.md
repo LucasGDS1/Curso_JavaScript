@@ -1,2 +1,2 @@
 # Curso_JavaScript
-Introdução ao JavaScript
+Estudando e evoluindo no JavaScript
