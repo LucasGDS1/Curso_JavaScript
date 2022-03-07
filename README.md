@@ -1,5 +1,4 @@
-# Curso_JavaScript
-Estudando e evoluindo no JavaScript.
+# Evoluindo com JavaScript
+Estudando e aperfeiçoando meu conhecimento no JavaScript.
 
-Último projeto implementado, foi o estudo sobre Object Literals (para substituir o uso do tradicional Switch).
-E uma breve "pincelada " em MVC.
+Projeto # olwithmvc # -> O estudo abordado é sobre Object Literals (para substituir o uso do tradicional Switch) e uma breve "pincelada" em MVC.
