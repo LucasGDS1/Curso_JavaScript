@@ -30,14 +30,8 @@ function calculator(operation, parameters) {
         "/" : Number(parameters[0]) / Number(parameters[1]),
         "default" : 'No given finded for calculator. Please digit values númerics with the operator.'
     }
-    let result = ( calculating[operation] || calculating["default"] );
-    validationReturnNumberZero(calculating) == true ? assembleResult( 0 ) : assembleResult( result );
-}
-
-function validationReturnNumberZero(result) {
-    if(result["+"] == 0 || result["-"] == 0 || result["*"] == 0 || result["/"] == 0) {
-        return true;
-    }
+    let result = ( calculating[operation] || calculating[operation] == 0 || calculating["default"] );
+    assembleResult( result );
 }
 
 function assembleResult(result) {
@@ -45,8 +39,10 @@ function assembleResult(result) {
         alert( result );
         document.getElementById('information').textContent = "";
         document.getElementById('result').textContent = "";
-    } else {
+    } else if( typeof(result) == "number" ) {
         document.getElementById('result').textContent = result;
-    } 
+    } else {
+        document.getElementById('result').textContent = 0;
+    }
 }
 
