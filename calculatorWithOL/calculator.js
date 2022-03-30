@@ -18,20 +18,20 @@ function findOperator(parameter) {
         }
     }
     
+    if( operator == "") return;
     calculator( operator, parameter.split(operator) );
 }
 
 function calculator(operation, parameters) {
 
     let calculating = {
-        "+" : Number(parameters[0]) + Number(parameters[1]),
+        "+" : parameters.reduce( (accumalator, current) => Number(accumalator) + Number(current) ),
         "-" : Number(parameters[0]) - Number(parameters[1]),
         "*" : Number(parameters[0]) * Number(parameters[1]),
         "/" : Number(parameters[0]) / Number(parameters[1]),
         "default" : 'No given finded for calculator. Please digit values númerics with the operator.'
     }
-    let result = ( calculating[operation] || calculating[operation] == 0 || calculating["default"] );
-    assembleResult( result );
+    calculating[operation] == 0 ? assembleResult( 0 ) : assembleResult( ( calculating[operation] || calculating["default"] ) );
 }
 
 function assembleResult(result) {
@@ -39,10 +39,8 @@ function assembleResult(result) {
         alert( result );
         document.getElementById('information').textContent = "";
         document.getElementById('result').textContent = "";
-    } else if( typeof(result) == "number" ) {
-        document.getElementById('result').textContent = result;
     } else {
-        document.getElementById('result').textContent = 0;
+        document.getElementById('result').textContent = result;
     }
 }
 
