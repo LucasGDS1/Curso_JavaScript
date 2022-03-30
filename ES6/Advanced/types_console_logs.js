@@ -1,0 +1,1 @@
+console.table([{firstName: 'Lucas', lastName: 'Gabriel de Souza'}]);
